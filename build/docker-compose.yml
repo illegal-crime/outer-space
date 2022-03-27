@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  env:
+    container_name: outer-space-build-env
+    build:
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    stop_signal: SIGKILL
+    env_file:
+      - ../.env
+    volumes:
+      - ./env-bin:/usr/local/bin:ro
+      - ./build-tools-out:/outer-space/build-tools/out:rw
+      # - ./build-tools-work:/outer-space/build-tools/work:rw
+      - ./.m2:/root/.m2:rw

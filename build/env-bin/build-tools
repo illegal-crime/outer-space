@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /outer-space/build-tools
+java -jar /outer-space/build-tools/BuildTools.jar -o /outer-space/build-tools/out --rev $SPIGOT_REV $@
